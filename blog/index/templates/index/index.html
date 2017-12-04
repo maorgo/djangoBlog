@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'index/stylesheet.css' %}">
+    </head>
+    <body>
+    <div align="center">
+        <img src="{% static 'index/logo.png' %}">
+    </div>
+    {% for post in posts %}
+        <br>
+        <div class="post">    Title: {{ post.title }}<br>
+                 Text: {{ post.text }} <br>
+                 Created at: {{ post.creation_date }} <br>
+            Read More: {{ post.slug }}
+        </div>
+    {% endfor %}
+    </body>
+</html>
